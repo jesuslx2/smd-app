@@ -6,4 +6,6 @@ Personal finance ledger: balances and spending from a CSV file.
 
     uv run ledger balance
     uv run ledger spending
-    
+
+## Author
+jesuslx2
