@@ -41,4 +41,3 @@ def main() -> None:
         print_spending(reports.spending_by_category(transactions))
     else:
         print_totals(reports.net_by_month(transactions))
-    

@@ -24,12 +24,10 @@ def is_spending(t: Transaction) -> bool:
     return t.amount < 0 and t.category != TRANSFER
 
 
-
 def balances(transactions: Iterable[Transaction]) -> dict[str, Decimal]:
     """The balance of each account, by account name, sorted by name."""
     totals = totals_by(transactions, key=lambda t: t.account)
     return dict(sorted(totals.items()))
-   
 
 
 def spending_by_category(transactions: Iterable[Transaction]) -> dict[str, Decimal]:
@@ -37,6 +35,7 @@ def spending_by_category(transactions: Iterable[Transaction]) -> dict[str, Decim
     spending = [t for t in transactions if is_spending(t)]
     totals = totals_by(spending, key=lambda t: t.category)
     return {c: -total for c, total in sorted(totals.items(), key=lambda item: item[1])}
+
 
 def net_by_month(
     transactions: Iterable[Transaction],

@@ -14,4 +14,3 @@ class Transaction:
     description: str
     category: str
     amount: Decimal
-    
